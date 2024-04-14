@@ -46,7 +46,7 @@ const Register = () => {
 
     try {
       const [response1] = await Promise.all([
-        axios.post("http://srv435312.hstgr.cloud:4000/api/v2/usuarios/", data),
+        axios.post("https://upc-codex.tech:4000/api/v2/usuarios/", data),
       ]);
 
       console.log("Respuesta de solicitud 1:", response1.status);
@@ -64,7 +64,7 @@ const Register = () => {
   };
   useEffect(() => {
     axios
-      .get("http://srv435312.hstgr.cloud:4000/api/V2/carreras")
+      .get("https://upc-codex.tech:4000/api/V2/carreras")
       .then((response) => {
         if (response.status === 200 || response.status === 201) {
           setcarreras(response.data.data);
@@ -79,7 +79,7 @@ const Register = () => {
 
   useEffect(() => {
     axios
-      .get("http://srv435312.hstgr.cloud:4000/api/V2/facultades")
+      .get("https://upc-codex.tech:4000/api/V2/facultades")
       .then((response) => {
         if (response.status === 200 || response.status === 201) {
           setfacultades(response.data.data);

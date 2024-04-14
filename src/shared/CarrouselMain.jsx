@@ -10,7 +10,7 @@ function CarrouselMain() {
  const [sliders, setSliders] = useState([]); // [] Estado inicial
   useEffect(() => {
     axios
-      .get("http://srv435312.hstgr.cloud:4000/api/v2/proyectos/")
+      .get("https://upc-codex.tech:4000/api/v2/proyectos/")
       .then((response) => {
         const latestProjects = response.data.data.slice(-5); // Obtener los últimos 5 proyectos
         setProyectos(response.data.data);

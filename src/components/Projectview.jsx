@@ -11,7 +11,7 @@ const Projectview = ({ selectedproject }) => {
   //LLAMADO DEL PROYECTO POR ID
   useEffect(() => {
     axios
-      .get(`http://srv435312.hstgr.cloud:4000/api/v2/proyectos/${selectedproject}`)
+      .get(`https://upc-codex.tech:4000/api/v2/proyectos/${selectedproject}`)
       .then((response) => {
         if (response.status === 200) {
           setProject(response.data);
@@ -27,12 +27,12 @@ const Projectview = ({ selectedproject }) => {
 
   useEffect(() => {
     axios
-      .get(`http://srv435312.hstgr.cloud:4000/api/v2/archivos/proyecto/${selectedproject}`)
+      .get(`https://upc-codex.tech:4000/api/v2/archivos/proyecto/${selectedproject}`)
       .then((response) => {
         if (response.status === 200 || response.status === 201) {
           setArchivos(response.data.data[0]);
           setdowloadlink(
-            `http://srv435312.hstgr.cloud:4000/api/v2/archivos/proyecto/mostrar/${response.data.data[0].proyectoId}`
+            `https://upc-codex.tech:4000/api/v2/archivos/proyecto/mostrar/${response.data.data[0].proyectoId}`
           );
         } else {
           console.error("La respuesta de la API no contiene datos válidos.");
@@ -48,9 +48,9 @@ const Projectview = ({ selectedproject }) => {
   const handleDownloadFile = async (archivoId) => {
     try {
       const response = await axios.get(
-        `http://srv435312.hstgr.cloud:4000/api/v2/archivos/proyecto/mostrar/${archivoId}`
+        `https://upc-codex.tech:4000/api/v2/archivos/proyecto/mostrar/${archivoId}`
       );
-      const downloadLink = `http://srv435312.hstgr.cloud:4000/api/v2/archivos/proyecto/mostrar/${archivoId}`; // Utilizar 'kk' en la URL
+      const downloadLink = `https://upc-codex.tech:4000/api/v2/archivos/proyecto/mostrar/${archivoId}`; // Utilizar 'kk' en la URL
       const link = document.createElement("a");
       link.href = downloadLink;
       link.setAttribute("target", "_blank");

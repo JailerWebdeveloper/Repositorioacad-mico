@@ -22,7 +22,7 @@ const Myprojectsview = ({ setSelectedproject, setcomponent }) => {
   useEffect(() => {
     axios
       .get(
-        `http://srv435312.hstgr.cloud:4000/api/v2/proyectos/cedula/${userData.cedula}`
+        `https://upc-codex.tech:4000/api/v2/proyectos/cedula/${userData.cedula}`
       )
       .then((response) => {
         console.log(response.data)

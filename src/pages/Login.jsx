@@ -29,7 +29,7 @@ const Login = () => {
     try {
       console.log("Enviando datos de autenticación:", data);
       const response = await axios.post(
-        "http://srv435312.hstgr.cloud:4000/api/v2/login/",
+        "https://upc-codex.tech:4000/api/v2/login/",
         data
       );
 

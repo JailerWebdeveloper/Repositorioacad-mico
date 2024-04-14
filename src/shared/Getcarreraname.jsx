@@ -9,7 +9,7 @@ const Getcarreraname = ({ id }) => {
   useEffect(() => {
     const fetchUsername = async () => {
       try {
-        const response = await axios.get(`http://srv435312.hstgr.cloud:4000/api/v2/facultades/${id}`);
+        const response = await axios.get(`https://upc-codex.tech:4000/api/v2/facultades/${id}`);
         if (response.status === 200) {
           setUsername(response.data.nombre);
         } else {

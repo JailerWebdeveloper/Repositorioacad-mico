@@ -1,4 +1,3 @@
-import Timepicker from "./TimePicker";
 import React, { Fragment, useState,useEffect } from "react";
 import "../App.css";
 import {
@@ -20,7 +19,6 @@ import { useFiltro } from '../Filtrocontext.jsx';
 const Sidebar = ({ setPagina, pagina}) => {
   const { filtro, setFiltro } = useFiltro();
   const { filtroType, setFiltroType } = useFiltro();
-  const { filtrofecha, setFiltrofecha } = useFiltro();
   const [user, setuser] = useState(false); // Inicializar el estado con null
   const [loggedIn, setLoggedIn] = useState(false);
   const bread = pagina;
@@ -192,11 +190,6 @@ const Sidebar = ({ setPagina, pagina}) => {
           <h5 className="uppercase font-semibold text-xs text-primary tracking-[2px] my-4">
             Filtros avanzados
           </h5>
-          <ul>
-            <li>
-              <Timepicker />
-            </li>
-          </ul>
         </section>
       </aside>
     </Fragment>

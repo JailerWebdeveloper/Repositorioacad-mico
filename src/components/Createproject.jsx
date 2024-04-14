@@ -3,7 +3,6 @@ import { Fragment } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
 import CreatableSelect from "react-select/creatable";
-import Timepicker2 from "../shared/TimePicker2";
 import { jwtDecode } from "jwt-decode";
 
 const Createproject = () => {
@@ -108,12 +107,12 @@ const Createproject = () => {
 
     try {
       const response1 = await axios.post(
-        "http://srv435312.hstgr.cloud:4000/api/v2/proyectos/",
+        "https://upc-codex.tech:4000/api/v2/proyectos/",
         data1
       );
 
       const responsearchivo = await axios.post(
-        "http://srv435312.hstgr.cloud:4000/api/v2/archivos/",
+        "https://upc-codex.tech:4000/api/v2/archivos/",
         dataarchivo,
         {
           headers: {
@@ -255,7 +254,7 @@ const Createproject = () => {
                 <label className="text-gray-500 font-medium">
                   Fecha de publicación
                 </label>
-                <Timepicker2 Settime={handleTimepickerChange} />
+                <input type="date" onChange={handleTimepickerChange(value)} />
               </div>
 
               <div className="mb-4 flex flex-col gap-2">
